@@ -1,0 +1,234 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger-color: #dc2626;
+    --danger-hover: #b91c1c;
+    --success-color: #16a34a;
+    --success-hover: #15803d;
+    --background: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background);
+    margin: 0;
+    padding: 2rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  
+  h1 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: -0.025em;
+    margin-top: 0;
+  }
+  
+  /* Input Styling */
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--card-background);
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  /* Button Styling */
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:not(.delete) {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  button:not(.delete):hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+  }
+  
+  button.delete {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  button.delete:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-1px);
+  }
+  
+  /* Table Styling */
+  .overflow-auto {
+    background-color: var(--card-background);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    max-height: 600px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  th {
+    background-color: var(--background);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  td {
+    padding: 1rem;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-background);
+  }
+  
+  tr:hover td {
+    background-color: #f8fafc;
+  }
+  
+  /* Notification Styling */
+  .notification {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .notification.sucesso {
+    background-color: #dcfce7;
+    color: var(--success-color);
+    border: 1px solid #86efac;
+  }
+  
+  .notification.erro {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    border: 1px solid #fca5a5;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #fca5a5;
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.75rem;
+    }
+  
+    .button-container {
+      flex-direction: column;
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    th, td {
+      padding: 0.75rem;
+    }
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-primary);
+  }

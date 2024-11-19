@@ -1,4 +1,4 @@
-// Register.tsx
+
 import React, { useState, useEffect } from 'react';
 
 const Register: React.FC = () => {
@@ -7,11 +7,9 @@ const Register: React.FC = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        // Verifica se já existe um usuário admin no localStorage
         const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
         const adminUser = { username: 'admin', password: 'admin123' };
 
-        // Adiciona o usuário admin se não existir
         if (!existingUsers.some((user: { username: string }) => user.username === adminUser.username)) {
             existingUsers.push(adminUser);
             localStorage.setItem('users', JSON.stringify(existingUsers));
@@ -23,7 +21,6 @@ const Register: React.FC = () => {
 
         const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
 
-        // Verifica se o usuário já existe
         const userExists = existingUsers.some((user: { username: string }) => user.username === username);
 
         if (userExists) {
@@ -31,7 +28,6 @@ const Register: React.FC = () => {
             return;
         }
 
-        // Adiciona novo usuário ao local storage
         const newUser = { username, password };
         existingUsers.push(newUser);
         localStorage.setItem('users', JSON.stringify(existingUsers));

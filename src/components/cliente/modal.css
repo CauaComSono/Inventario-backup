@@ -1,0 +1,23 @@
+
+.modal {
+    padding: 30px; 
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px; 
+    margin: auto;
+}
+
+
+.modal-title {
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+    color: #333; 
+    text-align: center; 
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
